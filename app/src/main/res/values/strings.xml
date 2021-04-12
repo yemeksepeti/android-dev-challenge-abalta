@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">YemekSepeti Case Study</string>
+    <string name="hint_search">Search…</string>
+    <string name="track_price">Track Price: %1$s</string>
+    <string name="track_name">Track Name: %1$s</string>
+
+    <string name="welcome_ys">Merhaba Yemek Sepeti Android Ekibi,\n\nBu projede <b>DataBinding</b>, <b>Navigation Components</b>, <b>Material Components</b>, <b>Dagger Hilt</b>, <b>Retrofit</b>, <b>Jetpack Paging v3</b>, <b>Glide</b> gibi popüler frameworkleri kullandım. Mimari olarak Google\'ın önerdiği MVVM-Repository mimarisini takip ettim. Ayrıca, activityViewModels sayesinde fragmentlar arasında data paslamaya gerek kalmadan MainViewModel üzerinden seçilen datayı detayda gösterdim. Ayrıca, iTunes api\'sinin dökümantasyonunu beğenmedim. Paging yaparken offset kullanacağımı bile tamamen tahmin ederek buldum. wrapperType diye bir filtre var mı yok mu göremedim ama bana gönderdiğiniz case study dökümanına göre yapmaya çalıştım. Network loglarını projeyi çalıştırdığınız da görebilmeniz için OkHttpLogging ekledim. Sınırlı süre dolayısı ile test kodu yazamadım. Ek süre verilir ise test kodu da yazabilirim.\n\nSaygılarımla..\nAbdullah Balta - Google Certified Android Associate Developer</string>
+</resources>
