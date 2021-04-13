@@ -25,8 +25,8 @@ class MainViewModel @Inject constructor(
     private val _progressLiveData: MutableLiveData<Boolean> = MutableLiveData(false)
     val progressLiveData: LiveData<Boolean> = _progressLiveData
 
-    fun search(term: String): Flow<PagingData<SearchedItem>> {
-        return mainRepository.searchTerm(term).cachedIn(viewModelScope)
+    fun search(query: String): Flow<PagingData<SearchedItem>> {
+        return mainRepository.searchTerm(query).cachedIn(viewModelScope)
     }
 
     fun movie(id: Long?) {

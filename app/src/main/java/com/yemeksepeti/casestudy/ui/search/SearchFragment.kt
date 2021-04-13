@@ -49,11 +49,10 @@ class SearchFragment : Fragment() {
 
             rvFilter.adapter = searchAdapter
 
-            edtSearch.doAfterTextChanged {
-                search(
-                    it.toString()
-                )
-            }
+            edtSearch.addTextChangedListener(DebouncingQueryTextListener(viewLifecycleOwner.lifecycle) {
+                search(it.orEmpty())
+            })
+
         }
 
         lifecycleScope.launch {
@@ -70,7 +69,10 @@ class SearchFragment : Fragment() {
             ).collectLatest {
                 binding.apply {
                     searchAdapter.goToDetail = { item ->
-                        val action = SearchFragmentDirections.actionSearchFragmentToSearchDetailFragment(item.id ?: 0, item.title.orEmpty())
+                        val action =
+                            SearchFragmentDirections.actionSearchFragmentToSearchDetailFragment(
+                                item.id ?: 0, item.title.orEmpty()
+                            )
                         findNavController().navigate(action)
                     }
                 }

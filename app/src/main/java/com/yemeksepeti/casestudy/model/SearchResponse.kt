@@ -56,7 +56,7 @@ data class Movie(
     @SerializedName("overview")
     val overview: String?,
     @SerializedName("genres")
-    val genreList: List<Genre>,
+    val genreList: List<Genre>?,
     @SerializedName("backdrop_path")
     val backdropPath: String?,
     @SerializedName("vote_average")
@@ -64,7 +64,7 @@ data class Movie(
 ) {
     fun formattedPosterPath(): String = posterPath?.fullPosterPath().orEmpty()
     fun formattedBackdropPath(): String = backdropPath?.fullBackdropPath().orEmpty()
-    fun formattedGenres(): String = genreList.joinToString { it.name.orEmpty() }
+    fun formattedGenres(): String = genreList?.joinToString { it.name.orEmpty() }.orEmpty()
 }
 
 data class Genre(
