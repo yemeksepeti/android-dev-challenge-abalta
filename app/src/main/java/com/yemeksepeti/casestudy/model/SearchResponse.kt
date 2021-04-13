@@ -1,6 +1,7 @@
 package com.yemeksepeti.casestudy.model
 
 import com.google.gson.annotations.SerializedName
+import com.yemeksepeti.casestudy.util.fullBackdropPath
 import com.yemeksepeti.casestudy.util.fullPosterPath
 
 data class SearchResponse(
@@ -62,6 +63,8 @@ data class Movie(
     val voteAverage: Float?
 ) {
     fun formattedPosterPath(): String = posterPath?.fullPosterPath().orEmpty()
+    fun formattedBackdropPath(): String = backdropPath?.fullBackdropPath().orEmpty()
+    fun formattedGenres(): String = genreList.joinToString { it.name.orEmpty() }
 }
 
 data class Genre(

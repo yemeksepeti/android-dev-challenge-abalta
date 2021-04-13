@@ -1,4 +1,4 @@
-package com.yemeksepeti.casestudy.ui
+package com.yemeksepeti.casestudy.ui.search
 
 import android.graphics.Rect
 import android.view.View
@@ -8,6 +8,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlin.math.ceil
 
+/**
+ * @author Alireza Farahani. Contact me at ar.d.farahani@gmail.com
+ *
+ * @param space Space/Gap/Margin between items in pixel
+ * @param includeEdge if true, border items adhere to RecyclerView sides
+ */
 /**
  * @author Alireza Farahani. Contact me at ar.d.farahani@gmail.com
  *

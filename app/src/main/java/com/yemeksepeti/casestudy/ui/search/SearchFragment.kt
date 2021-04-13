@@ -1,4 +1,4 @@
-package com.yemeksepeti.casestudy.ui
+package com.yemeksepeti.casestudy.ui.search
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import com.yemeksepeti.casestudy.R
 import com.yemeksepeti.casestudy.databinding.SearchFragmentBinding
+import com.yemeksepeti.casestudy.ui.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -39,13 +40,14 @@ class SearchFragment : Fragment() {
 
         binding.apply {
 
-            rvFilter.adapter = searchAdapter
             rvFilter.addItemDecoration(
                 SpaceItemDecoration(
                     resources.getDimensionPixelSize(R.dimen.grid_margin),
                     false
                 )
             )
+
+            rvFilter.adapter = searchAdapter
 
             edtSearch.doAfterTextChanged {
                 search(
@@ -68,8 +70,8 @@ class SearchFragment : Fragment() {
             ).collectLatest {
                 binding.apply {
                     searchAdapter.goToDetail = { item ->
-                        mainViewModel.movie(item.id)
-                        findNavController().navigate(R.id.action_searchFragment_to_searchDetailFragment)
+                        val action = SearchFragmentDirections.actionSearchFragmentToSearchDetailFragment(item.id ?: 0, item.title.orEmpty())
+                        findNavController().navigate(action)
                     }
                 }
                 searchAdapter.submitData(it)

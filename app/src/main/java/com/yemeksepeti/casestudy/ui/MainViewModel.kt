@@ -32,7 +32,9 @@ class MainViewModel @Inject constructor(
     fun movie(id: Long?) {
         id?.let {
             viewModelScope.launch {
+                loading(true)
                 _movieLiveData.value = mainRepository.getMovieDetail(id)
+                loading(false)
             }
         }
     }

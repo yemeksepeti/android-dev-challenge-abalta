@@ -7,16 +7,25 @@
 
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.yemeksepeti.casestudy.ui.SearchFragment"
+        android:name="com.yemeksepeti.casestudy.ui.search.SearchFragment"
         android:label="Search"
-        tools:layout="@layout/search_fragment" >
+        tools:layout="@layout/search_fragment">
         <action
             android:id="@+id/action_searchFragment_to_searchDetailFragment"
             app:destination="@id/searchDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchDetailFragment"
-        android:name="com.yemeksepeti.casestudy.ui.SearchDetailFragment"
-        android:label="Detail"
-        tools:layout="@layout/search_detail_fragment" />
+        android:name="com.yemeksepeti.casestudy.ui.detail.SearchDetailFragment"
+        android:label="{title}"
+        tools:layout="@layout/search_detail_fragment">
+        <argument
+            android:name="id"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <argument
+            android:name="title"
+            android:defaultValue="Detail"
+            app:argType="string" />
+    </fragment>
 </navigation>

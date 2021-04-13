@@ -1,4 +1,4 @@
-package com.yemeksepeti.casestudy.ui
+package com.yemeksepeti.casestudy.ui.search
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

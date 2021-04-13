@@ -11,3 +11,5 @@ fun ImageView.loadImageFromUrl(url: String?) {
 }
 
 fun String.fullPosterPath() = "https://image.tmdb.org/t/p/w500$this"
+
+fun String.fullBackdropPath() = "https://image.tmdb.org/t/p/original$this"
